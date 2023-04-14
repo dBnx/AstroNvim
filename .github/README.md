@@ -1,36 +1,63 @@
 # AstroNvim User Configuration Example
 
-A user configuration template for [AstroNvim](https://github.com/AstroNvim/AstroNvim)
+A user configuration template for [AstroNvim](https://github.com/AstroNvim/AstroNvim). The main focus lies on the development with
+- C/modern C++
+- Rust
+- (System)Verilog
+- LaTeX
+
 
 ## 🛠️ Installation
 
-#### Make a backup of your current nvim and shared folder
+#### Installing [neovim](https://neovim.io)
 
+Neovim, as well as the used programs can be installed with:
 ```shell
-mv ~/.config/nvim ~/.config/nvim.bak
-mv ~/.local/share/nvim ~/.local/share/nvim.bak
+yay -S neovim npm git lazygit gdu btm fzf
+yay -S --asdeps wl-clipboard python-neovim
+```
+`npm` is needed to install certain LSP's using `mason`. The cli tools `lazygit` and `gdu` can be opened
+directly within the editor and are not needed. Furthermore wayland is assumed - X11 needs another cli
+clipboard interface like `xclip`.
+
+
+#### Installing [AstroNvim](https://github.com/AstroNvim/AstroNvim) and the custom config
+
+- Backup your `neovim` configuration & install `astronvim`:
+
+```sh
+mv -v ~/.config/nvim ~/.config/nvim.bak; \
+  git clone --depth 1 https://github.com/AstroNvim/AstroNvim ~/.config/nvim
 ```
 
-#### Clone AstroNvim
+- Get this config:
 
-```shell
-git clone https://github.com/AstroNvim/AstroNvim ~/.config/nvim
+```sh
+git clone --depth 1 https://github.com/dBnx/AstroNvimConfig.git ~/.config/nvim/lua/user
 ```
 
-#### Create a new user repository from this template
+- Start `neovim` - all plugins will be automatically installed:
 
-Press the "Use this template" button above to create a new repository to store your user configuration.
-
-You can also just clone this repository directly if you do not want to track your user configuration in GitHub.
-
-#### Clone the repository
-
-```shell
-git clone https://github.com/<your_user>/<your_repository> ~/.config/nvim/lua/user
-```
-
-#### Start Neovim
-
-```shell
+```sh
 nvim
 ```
+
+
+All in one:
+```shell
+mv -v ~/.config/nvim ~/.config/nvim.bak; \
+  git clone --depth 1 https://github.com/AstroNvim/AstroNvim ~/.config/nvim \
+  && git clone --depth 1 https://github.com/dBnx/AstroNvimConfig.git ~/.config/nvim/lua/user \
+  && nvim
+```
+
+#### 🧹 Clean preexisting `neovim` folders
+
+Preexisting configurations can leave fragments behind, that result in weird errors and can be 
+renamed using:
+```shell
+mv ~/.local/share/nvim ~/.local/share/nvim.bak
+mv ~/.local/state/nvim ~/.local/state/nvim.bak
+mv ~/.cache/nvim ~/.cache/nvim.bak
+```
+
