@@ -6,8 +6,8 @@ return {
     -- overrides `require("mason-lspconfig").setup(...)`
     opts = {
       ensure_installed = {
-        "clangd", "cmake-language-server", "ltex-ls", "lua-language-server",
-        "pyright", "python-lsp-server", "rust-analyzer", "texlab"
+        "clangd", "cmake", "ltex", "lua_ls",
+        "pyright", "pylsp", "rust_analyzer", "texlab"
       },
     },
   },
@@ -16,7 +16,7 @@ return {
     "jay-babu/mason-null-ls.nvim",
     -- overrides `require("mason-null-ls").setup(...)`
     opts = {
-      ensure_installed = { "cmakelint", "shellcheck", "shellharden", "textlint", "commitlint", "cpplint" },
+      ensure_installed = { "cmakelint", "shellcheck", "shellharden", "textlint", "commitlint", "cpplint", "latexindent" },
     },
   },
   {
