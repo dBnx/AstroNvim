@@ -43,7 +43,7 @@ nvim
 ```
 
 
-All in one:
+#### All in one:
 ```shell
 mv -v ~/.config/nvim ~/.config/nvim.bak; \
   git clone --depth 1 https://github.com/AstroNvim/AstroNvim ~/.config/nvim \
@@ -61,3 +61,6 @@ mv ~/.local/state/nvim ~/.local/state/nvim.bak
 mv ~/.cache/nvim ~/.cache/nvim.bak
 ```
 
+## ⚙️ Usage
+
+- List of the default mappings provided by `AstroNvim`: https://astronvim.com/Basic%20Usage/mappings
