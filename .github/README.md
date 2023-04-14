@@ -3,6 +3,7 @@
 A user configuration template for [AstroNvim](https://github.com/AstroNvim/AstroNvim). The main focus lies on the development with
 - C/modern C++
 - Rust
+- Python3
 - (System)Verilog
 - LaTeX
 
@@ -44,6 +45,7 @@ nvim
 
 
 #### All in one:
+
 ```shell
 mv -v ~/.config/nvim ~/.config/nvim.bak; \
   git clone --depth 1 https://github.com/AstroNvim/AstroNvim ~/.config/nvim \
@@ -55,6 +57,7 @@ mv -v ~/.config/nvim ~/.config/nvim.bak; \
 
 Preexisting configurations can leave fragments behind, that result in weird errors and can be 
 renamed using:
+
 ```shell
 mv ~/.local/share/nvim ~/.local/share/nvim.bak
 mv ~/.local/state/nvim ~/.local/state/nvim.bak
