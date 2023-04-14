@@ -33,7 +33,7 @@ mv -v ~/.config/nvim ~/.config/nvim.bak; \
 - Get this config:
 
 ```sh
-git clone --depth 1 https://github.com/dBnx/AstroNvimConfig.git ~/.config/nvim/lua/user
+git clone --depth 1 git@github.com:dBnx/AstroNvimConfig.git ~/.config/nvim/lua/user
 ```
 
 - Start `neovim` - all plugins will be automatically installed:
@@ -47,7 +47,7 @@ All in one:
 ```shell
 mv -v ~/.config/nvim ~/.config/nvim.bak; \
   git clone --depth 1 https://github.com/AstroNvim/AstroNvim ~/.config/nvim \
-  && git clone --depth 1 https://github.com/dBnx/AstroNvimConfig.git ~/.config/nvim/lua/user \
+  && git clone --depth 1 git@github.com:dBnx/AstroNvimConfig.git ~/.config/nvim/lua/user \
   && nvim
 ```
 
