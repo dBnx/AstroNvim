@@ -22,6 +22,8 @@ return {
   diagnostics = {
     virtual_text = true,
     underline = true,
+    severity_sort = true,
+    update_in_insert = true
   },
   lsp = {
     -- customize lsp formatting options
@@ -75,7 +77,8 @@ return {
         diagnosticsDelay = 300,
         formatterLineLength = 80,
         forwardSearch = {
-          args = {}
+          executable = "okular",
+          args = { "%p" }
         },
         latexFormatter = "latexindent",
         latexindent = {
@@ -91,7 +94,7 @@ return {
       rtp = {
         -- customize default disabled vim plugins
         disabled_plugins = { "tohtml", "gzip", "matchit", "zipPlugin", "netrwPlugin", "tarPlugin" },
-      },
+      }
     },
   },
   -- This function is run last and is a good place to configuring
@@ -99,6 +102,8 @@ return {
   -- anything that doesn't fit in the normal config locations above can go here
   polish = function()
     vim.g['tex_flavor'] = 'latex'
+    vim.keymap.set("v", "J", ":m .+1<cr>gv=gv", { silent = true })
+    vim.keymap.set("v", "K", ":m .-2<cr>gv=gv", { silent = true })
     -- Set up custom filetypes
     -- vim.filetype.add {
     --   extension = {
