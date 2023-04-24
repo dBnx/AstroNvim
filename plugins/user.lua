@@ -29,6 +29,20 @@ return {
     config = function()
       require('crates').setup()
     end,
-  }
+  },
+  {
+    "L3MON4D3/LuaSnip",
+    config = function(plugin, opts)
+      vim.cmd("hi link LuasnipInsertNodePassive GruvboxRed")
+      vim.cmd("hi link LuasnipSnippetPassive GruvboxBlue")
+      -- include the default astronvim config that calls the setup call
+      opts.enable_autosnippets = true
+      opts.delete_check = 'InsertLeave'
+      require "plugins.configs.luasnip" (plugin, opts)
+      require("luasnip.loaders.from_vscode").lazy_load { paths = { "./lua/user/snippets" } }
+      require("luasnip.loaders.from_lua").lazy_load({ paths = "./lua/user/snippets" })
+      require("luasnip.loaders.from_snipmate").lazy_load({ paths = "./lua/user/snippets" })
+    end,
+  },
 
 }

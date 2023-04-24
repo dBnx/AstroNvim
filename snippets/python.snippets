@@ -1,0 +1,45 @@
+snippet aiomainextended
+	import asyncio
+	import aioconsole
+	import aiohttp
+	import logging
+	from threading import Event
+
+	async def server(program_should_exit_flag):
+    while not program_should_exit_flag.is_set():
+        await asyncio.sleep(10e-3)
+        $1
+
+	async def cli(program_should_exit_flag):
+    	await aioconsole.ainput("Enter anything to quit.\n")
+    	program_should_exit_flag.set()
+
+	async def main():
+    program_should_exit = Event()
+    await asyncio.gather(
+        server(program_should_exit),
+        cli(program_should_exit),
+    )
+
+	if __name__ == "__main__":
+    	logging.basicConfig(filename="log.txt",
+                        	filemode='w',  # a - append
+                        	format='%(asctime)s,%(msecs)d %(name)s %(levelname)s %(message)s',
+                        	datefmt='%H:%M:%S',
+                        	level=logging.INFO)
+    	asyncio.run(main())
+
+snippet aiomain
+	import asyncio
+	import logging
+
+	async def main():
+		${1:pass}
+
+	if __name__ == "__main__":
+    	logging.basicConfig(filename="log.txt",
+                        	filemode='w',  # a - append
+                        	format='%(asctime)s,%(msecs)d %(name)s %(levelname)s %(message)s',
+                        	datefmt='%H:%M:%S',
+                        	level=logging.INFO)
+    	asyncio.run(main())
