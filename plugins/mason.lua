@@ -6,9 +6,9 @@ return {
     -- overrides `require("mason-lspconfig").setup(...)`
     opts = {
       ensure_installed = {
-        "clangd", "cmake", "ltex", "lua_ls",
+        "clangd", "cmake", "ltex", "lua_ls", "wgsl_analyzer",
         "pyright", "pylsp", "rust_analyzer", "texlab",
-        "taplo", "html", "cssls"
+        "taplo", "html", "cssls",
       },
     },
   },
