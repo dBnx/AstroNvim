@@ -7,7 +7,8 @@ return {
     opts = {
       ensure_installed = {
         "clangd", "cmake", "ltex", "lua_ls",
-        "pyright", "pylsp", "rust_analyzer", "texlab"
+        "pyright", "pylsp", "rust_analyzer", "texlab",
+        "taplo", "html", "cssls"
       },
     },
   },
