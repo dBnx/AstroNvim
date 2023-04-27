@@ -1,0 +1,30 @@
+# vim: set ft=snippets :
+
+snippet for
+  for( const auto &${1:elem} : ${2:container | std::ranged::views::drop(1)} ) {
+      fmt::print("{}\n", elem);
+      $0
+  }
+
+snippet for_mut
+  for( const auto &${1:elem} : ${2:container | std::ranged::views::drop(1)} ) {
+      fmt::print("{}\n", elem);
+      $0
+  }
+
+snippet for_structbind
+  for( const auto &[${1:elem}, $2] : ${3:container | std::ranged::views::drop(1)} ) {
+      fmt::print("{}\n", elem);
+      $0
+  }
+
+snippet fmt
+	std::format("$1{}\n", $2);
+
+snippet dbg
+	std::print("$1 = {}\n", $1);
+
+snippet print
+	std::print("$1{}\n", $2);
+
+
