@@ -24,6 +24,7 @@ return {
   },
   {
     'saecki/crates.nvim',
+    event = { "BufRead Cargo.toml" },
     tag = 'v0.3.0',
     requires = { 'nvim-lua/plenary.nvim' },
     config = function()
