@@ -53,6 +53,15 @@ mv -v ~/.config/nvim ~/.config/nvim.bak; \
   && nvim
 ```
 
+#### Missing dictionary files
+
+In some circumstances neovim does not automatically download dictionary files. They can be
+manually added like this:
+```shell
+mkdir -p $HOME/.config/nvim/spell && \
+  wget 'http://ftp.vim.org/pub/vim/runtime/spell/de.utf-8.spl' $HOME/.config/nvim/spell/
+```
+
 #### 🧹 Clean preexisting `neovim` folders
 
 Preexisting configurations can leave fragments behind, that result in weird errors and can be 
