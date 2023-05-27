@@ -1,0 +1,14 @@
+{
+  "texlab.auxDirectory": "build",
+  "texlab.build.executable": "tectonic",
+  "texlab.build.args": [
+    "-X",
+    "compile",
+    "%f",
+    "--outdir",
+    "build",
+    "--synctex",
+    "--keep-logs",
+    "--keep-intermediates"
+  ]
+}
