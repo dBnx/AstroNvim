@@ -6,6 +6,7 @@ return {
 
   -- { import = "astrocommunity.colorscheme.catppuccin" },
   -- { import = "astrocommunity.completion.copilot-lua-cmp" },
+
   "p00f/clangd_extensions.nvim",   --
   "simrat39/rust-tools.nvim",      --
   {
