@@ -1,0 +1,13 @@
+# vim: set ft=snippets :
+
+snippet def_array_size 
+  #define ARRAY_SIZE(arr) (sizeof(arr) / sizeof(*arr))
+
+snippet def_eprintf 
+  #define eprintf(format, ...) fprintf(stderr, format, __VA_ARGS__)
+
+snippet readlines
+  char buffer[$(1:120)];
+  while( fgets(buffer, ARRAY_SIZE(buffer), $(2:fd)) ) {
+    $0
+  }
