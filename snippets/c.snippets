@@ -6,8 +6,26 @@ snippet def_array_size
 snippet def_eprintf 
   #define eprintf(format, ...) fprintf(stderr, format, __VA_ARGS__)
 
+snippet def_dprintf 
+	#ifdef DEBUG
+  #define dprintf(format, ...) fprintf(stderr, format, __VA_ARGS__)
+	#else
+  #define dprintf(format, ...)
+	#endif
+
+snippet fopen
+	FILE* $(1:file) = fopen($2, "$(3:r)");
+  if (!$1) {
+      printf("[ERROR] $4");
+      return NULL;
+  }
+  $0
+  fclose($1);
+ 
 snippet readlines
   char buffer[$(1:120)];
   while( fgets(buffer, ARRAY_SIZE(buffer), $(2:fd)) ) {
     $0
   }
+
+

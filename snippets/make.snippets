@@ -1,0 +1,32 @@
+# vim: set ft=snippets :
+
+snippet CFLAGS
+  WARNINGS := -Wall -Wextra -pedantic -Wshadow -Wpointer-arith -Wcast-align \
+            -Wwrite-strings -Wredundant-decls -Wnested-externs -Winline \
+            -Wuninitialized -Wstrict-prototypes
+  # -Wmissing-prototypes -Wmissing-declarations -Wconversion
+  CFLAGS := -g -std=c18 $(WARNINGS) -Werror
+
+
+snippet template_simple
+  CC=gcc
+  WARNINGS := -Wall -Wextra -pedantic -Wshadow -Wpointer-arith -Wcast-align \
+              -Wwrite-strings -Wredundant-decls -Wnested-externs -Winline \
+              -Wuninitialized -Wstrict-prototypes
+  # -Wmissing-prototypes -Wmissing-declarations -Wconversion
+  CFLAGS := -g -std=c18 $(WARNINGS) -Werror
+  ARGS=
+
+  .PHONY: clean all run
+
+  all: $1
+
+  $1: $1.c
+	  $(CC) $(CFLAGS) $@.c -o $@
+	
+	clean:
+	  rm -v $1
+
+	run: $1
+	  ./$1 $(ARGS) -DDEBUG
+
