@@ -22,11 +22,11 @@ snippet template_simple
   all: $1
 
   $1: $1.c
-	  $(CC) $(CFLAGS) $@.c -o $@
+    $(CC) $(CFLAGS) $@.c -o $@
 	
-	clean:
-	  rm -v $1
+  clean:
+    rm -v $1
 
-	run: $1
-	  ./$1 $(ARGS) -DDEBUG
+  run: $1
+    ./$1 $(ARGS) -DDEBUG
 
