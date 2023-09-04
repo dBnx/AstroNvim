@@ -137,6 +137,23 @@ return {
         autocmd CursorHold * lua vim.diagnostic.open_float(nil, { focusable = false })
         ]])
 
+        require('neorg').setup {
+            load = {
+                ["core.defaults"] = {},
+                ["core.dirman"] = {
+                    config = {
+                        workspaces = {
+                            home = "~/Sync/Notes/home",
+                            work = "~/Sync/Notes/work",
+                            uni = "~/Sync/Notes/uni",
+                            projects = "~/Sync/Notes/projects",
+                            fragments = "~/Sync/Notes/fragments"
+                        }
+                    }
+                }
+            }
+        }
+
         -- Filter out offset encoding warnings, that spam the whole screen
         local notify = vim.notify
         vim.notify = function(msg, ...)
