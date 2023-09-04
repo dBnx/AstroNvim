@@ -140,6 +140,8 @@ return {
         require('neorg').setup {
             load = {
                 ["core.defaults"] = {},
+                ["core.concealer"] = {},
+                ["core.completion"] = {},
                 ["core.dirman"] = {
                     config = {
                         workspaces = {
@@ -154,7 +156,7 @@ return {
             }
         }
 
-        -- Filter out offset encoding warnings, that spam the whole screen
+        -- Filter out offset encoding warnings, they spam the whole screen
         local notify = vim.notify
         vim.notify = function(msg, ...)
             if msg:match("warning: multiple different client offset_encodings") then
