@@ -68,6 +68,7 @@ return {
         vim.cmd([[
         set signcolumn=yes
         autocmd CursorHold * lua vim.diagnostic.open_float(nil, { focusable = false })
+        autocmd FileType make set noexpandtab shiftwidth=8 softtabstop=0
         ]])
 
         require('neorg').setup {
