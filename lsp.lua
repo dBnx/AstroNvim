@@ -25,7 +25,10 @@ return {
         -- "pyright"
     },
     config = {
-        clangd = {capabilities = {offsetEncoding = "utf-8"}},
+        clangd = {
+            capabilities = {offsetEncoding = "utf-8"},
+            -- cmd = {"clangd", "--offset-encoding=utf-16"},
+        },
         texlab = {
             auxDirectory = "build",
             bibtexFormatter = "texlab",
@@ -62,6 +65,9 @@ return {
         end,
         clangd = function(_, opts)
             require("clangd_extensions").setup {server = opts}
+        end,
+        tsserver = function(_, opts)
+            require("typescript").setup { server = opts }
         end
     }
 }
