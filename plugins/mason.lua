@@ -17,7 +17,8 @@ return {
     "jay-babu/mason-null-ls.nvim",
     -- overrides `require("mason-null-ls").setup(...)`
     opts = {
-      ensure_installed = { "cmakelint", "shellcheck", "shellharden", "textlint", "commitlint", "cpplint", "latexindent" },
+      -- "cpplint", 
+      ensure_installed = { "cmakelint", "shellcheck", "shellharden", "textlint", "commitlint", "latexindent" },
     },
   },
   {
