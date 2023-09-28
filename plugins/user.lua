@@ -51,13 +51,32 @@ return {
     }, --
     {
         "nvim-neorg/neorg",
-        run = ":Neorg sync-parsers", -- This is the important bit!
+        build = ":Neorg sync-parsers",
+        dependencies = { "nvim-lua/plenary.nvim" },
         config = function()
-            require("neorg").setup {
-                -- configuration here
-            }
-        end
-    }, --
+          require("neorg").setup {
+            load = {
+              ["core.defaults"] = {},
+              ["core.concealer"] = {},
+              ["core.dirman"] = {
+                config = {
+                  workspaces = {
+                            home = "~/Sync/Notes/home",
+                            work = "~/Sync/Notes/work",
+                            uni = "~/Sync/Notes/uni",
+                            projects = "~/Sync/Notes/projects",
+                            fragments = "~/Sync/Notes/fragments"
+                  },
+                  default_workspace = "home",
+                },
+              },
+            },
+          }
+
+          vim.wo.foldlevel = 99
+          vim.wo.conceallevel = 2
+        end,
+      }, --
     {
         "SeniorMars/typst.nvim" --
     }
